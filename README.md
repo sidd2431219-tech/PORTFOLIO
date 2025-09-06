@@ -1,72 +1,70 @@
-# CODSOFT
+# Siddhant Deep Portfolio 🚀
 
-Siddhant Deep Portfolio
+![Portfolio Badge](https://img.shields.io/badge/Portfolio-HTML/CSS/JS-Tailwind?style=for-the-badge&logo=github)
 
-This repository contains the source code for my personal portfolio website, showcasing my skills, projects, and contact information. The portfolio is fully responsive, modern, and built with HTML, CSS, Tailwind CSS, and JavaScript.
+Welcome to my personal portfolio! This website showcases my skills, projects, and contact information in a modern, responsive design. 🌟
 
-Features
+---
 
-Dark/Light Mode: Toggle between dark and light themes.
+## 🔹 Live Demo
 
-Responsive Design: Works seamlessly on desktop, tablet, and mobile devices.
+[Click here to view my portfolio](https://sidd2431219-tech.github.io/portfolio)  
 
-Interactive Elements: Hover effects on cards and images, typewriter animation, scroll reveal animations.
 
-Projects Showcase: Highlighting full-stack and data analytics projects.
+---
 
-Resume Download: Easy access to download resume in PDF format.
+## 🛠️ Features
 
-Contact Section: Includes email and phone contact links.
+- Dark/Light Mode 🌙☀️  
+- Fully Responsive Design 📱💻  
+- Scroll Reveal Animations ✨  
+- Typewriter Text Effect 🖊️  
+- Projects Showcase 💼  
+- Resume Download PDF 📄  
+- Contact Section with Email & Phone 📧📞  
 
-Scroll-to-Top Button: Smooth scroll for better navigation.
+---
 
-Technologies Used
+## 💻 Technologies Used
 
-HTML5 & CSS3
+- **Frontend:** HTML5, CSS3, Tailwind CSS, JavaScript  
+- **Animations:** CSS & JS scroll reveal, hover effects  
+- **Other:** Responsive design techniques, gradients, shadows  
 
-Tailwind CSS
+---
 
-JavaScript
+## 📂 Projects
 
-Responsive design techniques
+### 1. Lost-Found App
+- Full-stack lost & found app for a college campus  
+- Built with HTML, CSS, JavaScript, Node.js  
 
-CSS animations & gradients
+### 2. Data Analytics Dashboard
+- Analyzed Kaggle Road Accident datasets  
+- Visualized insights using charts and graphs  
 
-Getting Started
-1. Clone the repository:
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-2. Open portfolio.html in your browser:
-   open portfolio.html
-3. Edit and Customize:
+---
 
-Replace placeholder images with your own.
+## 📬 Contact Me
 
-Update personal information like email, phone, and projects.
+- **Email:** [sidd.2431219@gmail.com](mailto:sidd.2431219@gmail.com)  
+- **Phone:** +91-790XXXXXXX  
 
-Adjust colors, fonts, and sections as needed.
+---
 
-Deployment
+## ⚡ How to Run Locally
 
-You can host this portfolio on GitHub Pages, Netlify, or Vercel.
+1. Clone this repository:
 
-Example: GitHub Pages
+```bash
+git clone https://github.com/sidd2431219-tech/portfolio.git
+cd portfolio
 
-Push your repository to GitHub.
+---
+2. Open index.html in your browser
 
-Go to Settings → Pages → Choose branch → Save.
+---
 
-Your portfolio will be live at https://sidd2431219-tech.github.io/portfolio
+📝 License
 
-Credits
-
-Built by Siddhant Deep.
-
-Portfolio design inspired by modern web design practices.
-
-Placeholder images sourced from Google and LinkedIn profile photos.
-
-License
-
-This project is open source and available under the MIT License.
-
+This project is licensed under the MIT License.
