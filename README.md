@@ -67,6 +67,6 @@ Double-click the index.html file, or
 
 Right-click → “Open with” → Select your browser.
 
-##📝 License
+##  📝 License
 
 This project is licensed under the MIT License.
