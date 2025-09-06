@@ -10,7 +10,6 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 
 [Click here to view my portfolio](https://sidd2431219-tech.github.io/portfolio)  
 
-
 ---
 
 ## 🛠️ Features
@@ -54,17 +53,21 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 
 ## ⚡ How to Run Locally
 
-1. Clone this repository:
+1. **Clone this repository:**
 
 ```bash
 git clone https://github.com/sidd2431219-tech/portfolio.git
 cd portfolio
 
 ---
-2. Open index.html in your browser
 
----
 
-📝 License
+###2. Open the portfolio in your browser:
+
+Double-click the index.html file, or
+
+Right-click → “Open with” → Select your browser.
+
+###📝 License
 
 This project is licensed under the MIT License.
