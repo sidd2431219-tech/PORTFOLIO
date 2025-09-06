@@ -61,7 +61,7 @@ cd portfolio
  ```
 ---
 
-2. **Open the portfolio in your browser:
+2. **Open the portfolio in your browser:**
 
 Double-click the index.html file, or
 
