@@ -55,8 +55,18 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 
 1. **Clone this repository:**
 
-```bash
+```bash 
 git clone https://github.com/sidd2431219-tech/portfolio.git
 cd portfolio
-
+ ```
 ---
+
+2. **Open the portfolio in your browser:
+
+Double-click the index.html file, or
+
+Right-click → “Open with” → Select your browser.
+
+##📝 License
+
+This project is licensed under the MIT License.
