@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Siddhant Deep Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    :root {
+        --bg-color: #f7f0f0;
+        --text-color: #1f2937;
+        --card-bg: #ffffff;
+        --accent: #3b82f6;
+        --accent-hover: #2563eb;
+        --secondary: #06b6d4;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    html.dark {
+        --bg-color: #111827;
+        --text-color: #f9fafb;
+        --card-bg: #1f2937;
+        --accent: #60a5fa;
+        --accent-hover: #3b82f6;
+        --secondary: #22d3ee;
+        --shadow-color: rgba(0, 0, 0, 0.4);
+    }
+    body {
+        background: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Inter', sans-serif;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    header h1,h2 {
+        background: linear-gradient(90deg, #3b82f6, #03f06e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    header p {
+        color: black;
+    }
+    .card {
+        background: var(--card-bg);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 10px 25px var(--shadow-color);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+        cursor: default;
+    }
+    .card:hover,
+    .card:focus-within {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px var(--shadow-color);
+    }
+    .btn-primary {
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        color: #fff;
+        font-weight: 700;
+        padding: 0.6rem 1.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, var(--accent-hover), var(--secondary));
+        box-shadow: 0 8px 20px var(--shadow-color);
+    }
+    .typewriter {
+        border-right: 3px solid var(--accent);
+        animation: typing 3s steps(30, end), blink-caret 0.7s step-end infinite;
+    }
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    #scrollTopBtn {
+        background: var(--accent);
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border-radius: 50%;
+        box-shadow: 0 6px 15px var(--shadow-color);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #scrollTopBtn:hover,
+    #scrollTopBtn:focus {
+        transform: scale(1.1);
+        background: var(--accent-hover);
+    }
+    .img-hover-zoom {
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+        border-radius: 0.75rem;
+    }
+    .img-hover-zoom:hover,
+    .img-hover-zoom:focus {
+        transform: scale(1.07);
+        box-shadow: 0 10px 30px var(--shadow-color);
+    }
+    footer {
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        color: #fff;
+    }
+    @media (min-width: 768px) {
+        #about .text-left {
+            text-align: left;
+        }
+    }
+    a:hover,
+    a:focus {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+    #theme-toggle {
+        background: var(--card-bg);
+        color: var(--text-color);
+        font-size: 1.25rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    #theme-toggle:hover,
+    #theme-toggle:focus {
+        transform: scale(1.1);
+        background: var(--accent);
+        color: #fff;
+    }
+    </style>
+</head>
+<body class="font-sans leading-normal tracking-normal text-center">
+    <button id="theme-toggle" aria-label="Toggle dark mode" class="fixed top-4 right-4 p-2 bg-gray-200 dark:bg-gray-700 rounded-full shadow-lg z-10 focus:outline-none" title="Toggle dark mode">🌙</button>
+
+    <header class="h-screen flex flex-col justify-center items-center p-8">
+        <h1 class="text-5xl font-bold typewriter mb-0" aria-label="Siddhant Deep">Siddhant Deep</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mt-2 max-w-xl"><b>Innovative Developer &amp; Creative Problem Solver</b></p>
+    </header>
+
+    <section id="about" class="py-16 px-8 reveal max-w-4xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
+        <img src="https://media.licdn.com/dms/image/v2/D5635AQE0amzUhly_-w/profile-framedphoto-shrink_200_200/B56ZiaXbKNH0Ag-/0/1754936489093?e=1757790000&v=beta&t=3TqDWhtZycZwiknhoV6U4R3ZhtCouaUsRIsheCf5SKY" alt="Professional headshot of Siddhant Deep, wearing a blue blazer with plain background" class="rounded-full shadow-lg w-48 h-48 object-cover img-hover-zoom" tabindex="0" />
+        <div class="text-left">
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <p class="text-lg leading-relaxed"><b>Hello, I am Siddhant Deep, a passionate Data Analyst with hands-on experience in full-stack development. I specialize in creating unique, user-friendly applications using technologies like HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS. Beyond coding, I enjoy playing Volleyball, Chess, Photography, and contributing to open-source and real-world projects/problems.</b></p>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 px-8 reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card" tabindex="0" role="region" aria-label="Frontend Development skills">
+                    <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, Bootstrap, Tailwind CSS</p>
+                </div>
+                <div class="card" tabindex="0" role="region" aria-label="Backend Development skills">
+                    <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
+                    <p>Node.js, Python, SQL</p>
+                </div>
+                <div class="card" tabindex="0" role="region" aria-label="Data Analysis skills">
+                    <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
+                    <p>PowerBI, MS Excel, GitHub, Data Visualization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 px-8 reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card" tabindex="0" role="region" aria-label="E-Commerce Platform project">
+                    <img src="https://i.redd.it/5lzdqhgbc3d81.png" alt="Screenshot of a vibrant e-commerce website with colorful product cards, shopping cart icons, and a sleek navigation bar in a minimalist design with warm color tones" class="rounded mb-4 img-hover-zoom" />
+                    <h3 class="text-xl font-semibold mb-2">Lost-Found App</h3>
+                    <p>A full-stack items lost found app for college campus.</p>
+                </div>
+                <div class="card" tabindex="0" role="region" aria-label="Data Analytics Dashboard project">
+                    <img src="https://media.licdn.com/dms/image/v2/D5612AQFE_gu3hspP0A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1681062404989?e=2147483647&v=beta&t=GYqlC4GfHIqCDa3KbXdFaDfEod-BdohRIFmKaQFDZPQ" alt="Interactive dashboard interface with graphs, data visualizations, and user profiles displayed on a clean dark blue panel with glowing elements" class="rounded mb-4 img-hover-zoom" />
+                    <h3 class="text-xl font-semibold mb-2">Data Analytics Dashboard</h3>
+                    <p>Kaggle Datasets Road Accident Data Analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="py-16 px-8 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 reveal">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Resume</h2>
+            <p class="mb-4">Download my resume to learn more about my experience and qualifications.</p>
+            <a href="#" class="btn-primary" download="Siddhant_Deep_Resume.pdf" aria-label="Download Resume PDF">Download PDF</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 px-8 reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 text-lg">
+                <p><strong>Email:</strong> <a href="mailto:sidd.24@gmail.com" class="text-blue-600 dark:text-blue-400 hover:underline focus:underline">sidd.2431219@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+" class="text-blue-600 dark:text-blue-400 hover:underline focus:underline">+91-790XXXXXXX</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-8 bg-gray-900 text-white text-center">
+        <p>&copy; 2025 Siddhant Deep. All rights reserved. | <a href="#" class="text-blue-400 hover:underline focus:underline">Privacy Policy</a></p>
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">⬆️</button>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            themeToggleBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) scrollTopBtn.classList.add('show');
+            else scrollTopBtn.classList.remove('show');
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
