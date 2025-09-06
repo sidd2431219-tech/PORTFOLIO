@@ -8,7 +8,7 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 
 ## 🔹 Live Demo
 
-[Click here to view my portfolio](https://sidd2431219-tech.github.io/portfolio)  
+[Click here to view my portfolio](https://sidd2431219-tech.github.io/CODSOFT)  
 
 ---
 
@@ -56,7 +56,7 @@ Welcome to my personal portfolio! This website showcases my skills, projects, an
 1. **Clone this repository:**
 
 ```bash 
-git clone https://github.com/sidd2431219-tech/portfolio.git
+git clone https://github.com/sidd2431219-tech/CODSOFT.git
 cd portfolio
  ```
 ---
