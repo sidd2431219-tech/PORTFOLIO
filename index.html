@@ -5,21 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SIDDHANT DEEP - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <style>
     :root {
-      --bg-color: linear-gradient(135deg, #000000, #2b0000, #000000);
+      --bg1: #000000;
+      --bg2: #2b0000;
+      --bg3: #000000;
       --text-color: #f3f4f6;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --accent1: #b30000; /* Rich Maroon */
-      --accent2: #ff0040; /* Red Glow */
-      --accent3: #ffd700; /* Golden */
-      --shadow-strong: 0 10px 25px rgba(255, 215, 0, 0.35); 
-      --shadow-hover: 0 15px 35px rgba(255, 0, 64, 0.5); 
+      --accent1: #b30000;
+      --accent2: #ff0040;
+      --accent3: #ffd700;
     }
     body {
-      background: var(--bg-color);
+      background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 300% 300%;
+      animation: gradientMove 15s ease infinite;
       color: var(--text-color);
       font-family: 'Inter', sans-serif;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     h1, h2, h3 {
       background: linear-gradient(90deg, var(--accent3), var(--accent2));
@@ -28,16 +35,17 @@
       -webkit-text-fill-color: transparent;
     }
     .card {
-      background: var(--card-bg);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 1rem;
       padding: 1.5rem;
       backdrop-filter: blur(12px);
-      box-shadow: var(--shadow-strong);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      perspective: 1000px;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px) rotateY(8deg) scale(1.02);
+      box-shadow: 0 15px 35px rgba(255, 0, 64, 0.5);
     }
     .btn-primary {
       background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
@@ -45,24 +53,89 @@
       font-weight: 600;
       padding: 0.7rem 1.6rem;
       border-radius: 0.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
       display: inline-block;
+      box-shadow: 0 0 15px rgba(255, 0, 64, 0.5);
     }
     .btn-primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+      transform: scale(1.07);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+    }
+    .skill-bar {
+      height: 8px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.2);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .skill-level {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent2), var(--accent3));
+      width: 0;
+      transition: width 2s ease;
     }
     footer {
       background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
       color: #fff;
     }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+      width: 0%;
+      z-index: 1000;
+    }
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .particles span {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: var(--accent3);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0.5); }
+      to { transform: translateY(-10vh) scale(1.2); }
+    }
+    nav.scrolled {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+    }
   </style>
 </head>
-<body class="font-sans leading-normal tracking-normal text-center">
+<body>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+  <div id="progress-bar"></div>
+
+  <div class="particles">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:25%; animation-delay:2s;"></span>
+    <span style="left:40%; animation-delay:4s;"></span>
+    <span style="left:60%; animation-delay:1s;"></span>
+    <span style="left:80%; animation-delay:3s;"></span>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 py-4 px-6">
+    <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-wide">SIDDHANT DEEP</h1>
       <div class="flex items-center space-x-8 text-lg font-medium">
         <a href="#about" class="hover:text-yellow-400">About</a>
@@ -74,53 +147,53 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="h-screen flex flex-col justify-center items-center space-y-6 px-6">
-    <img src="https://media.licdn.com/dms/image/v2/D5635AQE0amzUhly_-w/profile-framedphoto-shrink_200_200/B56ZiaXbKNH0Ag-/0/1754936489093?e=1757790000&v=beta&t=3TqDWhtZycZwiknhoV6U4R3ZhtCouaUsRIsheCf5SKY" 
-         alt="Siddhant Deep Profile" 
-         class="w-64 h-64 object-cover rounded-full shadow-2xl border-4 border-red-600" />
-    <h2 class="text-5xl font-bold">Hello, I'm Siddhant Deep</h2>
-    <p class="text-lg max-w-2xl text-gray-300">An <b>Innovative Developer & Data Analyst</b> crafting impactful digital solutions.</p>
-    <a href="#contact" class="btn-primary">Get in Touch</a>
-  </header>
+<header class="h-screen flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 px-12 pt-24">
+  <div class="flex-1 text-left">
+    <h2 class="text-5xl font-bold text-white opacity-0 translate-y-6 transition-all duration-1000" id="hero-title">
+      Hello, I'm <span class="text-yellow-400">Siddhant Deep</span>
+    </h2>
+    <p class="text-xl text-gray-300 mt-4"><span id="typed"></span></p>
+    <a href="#contact" class="btn-primary mt-6 inline-block">Get in Touch</a>
+  </div>
+  <img src="Siddhant Deep.png" 
+       alt="Siddhant Deep" 
+       class="absolute right-0 bottom-0 w-[450px] h-auto object-contain z-0 pointer-events-none"
+       style="mix-blend-mode: lighten;">
+</header>
 
-  <!-- About -->
-  <section id="about" class="py-20 px-6">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
-      <div class="text-left">
-        <h2 class="text-4xl font-bold mb-4">About Me</h2>
-        <p class="text-lg leading-relaxed text-gray-300">
-          I am Siddhant Deep, a <b>Data Analyst</b> with full-stack development experience. 
-          I create unique, user-friendly apps using HTML, CSS, JS, Bootstrap & Tailwind. 
-          Beyond coding, I love Volleyball, Chess, Photography, and solving real-world problems.
-        </p>
-      </div>
+  <section id="about" class="py-20 px-6 reveal">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">About Me</h2>
+      <p class="text-lg leading-relaxed text-gray-300">
+        Heyy..!! I am Siddhant Deep a <b>Data Analyst</b> and <b>Full Stack Developer</b> who loves turning data into <b>decisions</b> and ideas into <b>applications</b> that truly make an impact. Using <i>Python, SQL and Power BI</i>, I dig into numbers to uncover the stories they hide. With <i>React, Node.js, and MongoDB</i> I bring those insights to life by building web solutions that people can actually use. I enjoy blending logic with creativity, making data not just understandable but useful and actionable. I am curious by nature and driven to create things that matter. Whether it was about solving a tricky problem, designing a clean user experience, or building tools that last. I find joy in the process. To me, data is more than numbers, it is a story waiting to be told and code is the language that shares it with the world.
+      </p>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-20 px-6">
+  <section id="skills" class="py-20 px-6 reveal">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-4xl font-bold mb-10">Skills</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card">
           <h3 class="text-xl font-semibold mb-2">Frontend</h3>
           <p>HTML, CSS, JavaScript, Bootstrap, Tailwind</p>
+          <div class="skill-bar"><div class="skill-level" data-skill="90%"></div></div>
         </div>
         <div class="card">
           <h3 class="text-xl font-semibold mb-2">Backend</h3>
           <p>Node.js, Python, SQL</p>
+          <div class="skill-bar"><div class="skill-level" data-skill="80%"></div></div>
         </div>
         <div class="card">
           <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
           <p>PowerBI, Excel, GitHub, Data Visualization</p>
+          <div class="skill-bar"><div class="skill-level" data-skill="85%"></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-20 px-6">
+  <section id="projects" class="py-20 px-6 reveal">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-4xl font-bold mb-10">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -138,28 +211,66 @@
     </div>
   </section>
 
-  <!-- Resume -->
-  <section id="resume" class="py-20 px-6">
+  <section id="resume" class="py-20 px-6 reveal text-center">
+    <h2 class="text-4xl font-bold mb-4">Resume</h2>
+    <p class="mb-4 text-gray-300">Download my resume to explore my skills and experience.</p>
+    <a href="https://sidd2431219-tech.github.io/CODSOFT/Siddhant_Deep_Resume.pdf" class="btn-primary" download>Download PDF</a>
+  </section>
+
+  <section id="contact" class="py-20 px-6 reveal">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4">Resume</h2>
-      <p class="mb-4 text-gray-300">Download my resume to explore my skills and experience.</p>
-      <a href="https://sidd2431219-tech.github.io/CODSOFT/Siddhant_Deep_Resume.pdf" class="btn-primary" download="Siddhant_Deep_Resume.pdf">Download PDF</a>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-20 px-6">
-    <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold mb-10">Contact Me</h2>
-      <p><strong>Email:</strong> <a href="mailto:sidd.2431219@gmail.com" class="underline text-yellow-400">sidd.2431219@gmail.com</a></p>
-      <p><strong>Phone:</strong> +91-790XXXXXXX</p>
+      <p>📧 <a href="mailto:sidd.2431219@gmail.com" class="underline text-yellow-400">sidd.2431219@gmail.com</a></p>
+      <p>📱 +91-790XXXXXXX</p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-6 text-center">
     <p>© 2025 SIDDHANT DEEP. All rights reserved.</p>
   </footer>
 
+  <script>
+    new Typed('#typed', {
+      strings: ["Innovative Developer", "Data Analyst", "Problem Solver"],
+      typeSpeed: 70,
+      backSpeed: 50,
+      loop: true
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      reveals.forEach(rev => {
+        const rect = rev.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) rev.classList.add("active");
+      });
+    });
+
+    const skillLevels = document.querySelectorAll(".skill-level");
+    window.addEventListener("scroll", () => {
+      skillLevels.forEach(level => {
+        if (level.getBoundingClientRect().top < window.innerHeight) {
+          level.style.width = level.getAttribute("data-skill");
+        }
+      });
+    });
+
+    const nav = document.querySelector("nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+    });
+
+    const progressBar = document.getElementById("progress-bar");
+    window.addEventListener("scroll", () => {
+      let scrollTop = document.documentElement.scrollTop;
+      let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let progress = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = progress + "%";
+    });
+
+    window.addEventListener("load", () => {
+      document.getElementById("hero-title").classList.remove("opacity-0","translate-y-6");
+    });
+  </script>
 </body>
 </html>
