@@ -22,6 +22,8 @@
       animation: gradientMove 15s ease infinite;
       color: var(--text-color);
       font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow-x: hidden;
     }
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
@@ -100,9 +102,22 @@
       backdrop-filter: blur(10px);
       transition: all 0.4s ease;
     }
+    /* Glitter Canvas */
+    #glitter {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Glitter Background -->
+  <canvas id="glitter"></canvas>
 
   <!-- Scroll Progress -->
   <div id="progress-bar"></div>
@@ -267,9 +282,41 @@
       progressBar.style.width = progress + "%";
     });
 
-    window.addEventListener("load", () => {
-      document.getElementById("hero-title").classList.remove("opacity-0","translate-y-6");
-    });
+    // Glitter Background Effect
+    const canvas = document.getElementById('glitter');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const particles = Array.from({ length: 40 }).map(() => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+    }));
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 215, 0, 0.7)';
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
   </script>
 </body>
 </html>
